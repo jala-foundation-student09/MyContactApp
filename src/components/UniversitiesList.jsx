@@ -1,5 +1,13 @@
 import React from "react";
-
-export const UniversitiesList = () => {
-  return <div>UniversitiesList</div>;
+import { University } from "./University";
+export const UniversitiesList = ({ data }) => {
+  return (
+    <div>
+      {data.length !== 0
+        ? data.map((item, index) => (
+            <University key={index} name={item.name} id={item.id} />
+          ))
+        : null}
+    </div>
+  );
 };
