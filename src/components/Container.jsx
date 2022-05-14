@@ -30,12 +30,12 @@ export const Container = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <h1>University List App</h1>
       <div>
         <Searchbar university={university} setUniversity={setUniversity} />
       </div>
-      <div className={styles.list}>
+      <div className="">
         <UniversitiesList
           data={university ? filteredUniversities : universities}
         />

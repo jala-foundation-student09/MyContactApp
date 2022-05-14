@@ -43,7 +43,7 @@ export const Reviews = () => {
     });
   };
   return (
-    <div>
+    <div className="container container-fluid">
       {info.length !== 0
         ? info.map((item, index) => (
             <div key={index}>
@@ -60,12 +60,13 @@ export const Reviews = () => {
                     ))
                   : "No reviews yet "}
               </div>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} className="form-group">
                 <label>
                   Name
                   <input
                     type="text"
                     placeholder="name"
+                    className="form-control"
                     name="userName"
                     value={userName}
                     onChange={handleOnChange}
@@ -78,6 +79,7 @@ export const Reviews = () => {
                     type="email"
                     placeholder="email"
                     name="userEmail"
+                    className="form-control"
                     value={userEmail}
                     onChange={handleOnChange}
                     required
@@ -88,13 +90,16 @@ export const Reviews = () => {
                   <input
                     type="text"
                     placeholder="review"
+                    className="form-control"
                     name="userReview"
                     value={userReview}
                     onChange={handleOnChange}
                     required
                   />
                 </label>
-                <button type="submit">Add review</button>
+                <button type="submit" className="btn btn-default">
+                  Add review
+                </button>
               </form>
             </div>
           ))
